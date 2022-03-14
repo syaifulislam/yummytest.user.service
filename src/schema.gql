@@ -1,0 +1,42 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @key(fields: String!) on OBJECT | INTERFACE
+
+directive @extends on OBJECT | INTERFACE
+
+directive @external on OBJECT | FIELD_DEFINITION
+
+directive @requires(fields: String!) on FIELD_DEFINITION
+
+directive @provides(fields: String!) on FIELD_DEFINITION
+
+type CreatedUserObject {
+  success: Boolean!
+}
+
+type LoginUserObject {
+  id: ID!
+  fullname: String!
+  username: String!
+  roles: String!
+  token: String!
+}
+
+type Mutation {
+  createUser(input: CreateUsersRequest!): CreatedUserObject!
+  loginUser(input: LoginUsersRequest!): LoginUserObject!
+}
+
+input CreateUsersRequest {
+  fullname: String!
+  username: String!
+  password: String!
+  roles: String!
+}
+
+input LoginUsersRequest {
+  username: String!
+  password: String!
+}
